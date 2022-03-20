@@ -1,0 +1,32 @@
+name: telegramenv
+channels:
+  - conda-forge
+dependencies:
+  - python=3.7
+#notebooks
+  - ipython
+  - ipykernel
+#requirements
+  - python-telegram-bot
+#formatting and linting
+  - black
+  - flake8
+#docs
+  - sphinx
+  - sphinx_rtd_theme
+  - myst-parser
+  - docutils=0.16 #rtd_theme & py37 avoids bug in bullet points
+  - nbsphinx
+#tests
+  - pytest
+  - pytest-cov
+  - pytest-asyncio
+#env variables for testing
+  - python-decouple
+  - pip
+  - pip:
+    #package reqs only from pip
+    #full python api wrapper for testing
+    - telethon
+    #docs
+    - sphinxemoji

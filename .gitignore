@@ -1,0 +1,28 @@
+_pycache__/
+.vscode
+*.pyc
+######
+# env
+.env
+#######
+# sphinx docs
+docsrc/build
+######
+# package files
+*.egg-info/
+build
+######
+# pytest
+*.pytest_cache
+# test coverage
+htmlcov
+.coverage
+.coverage*
+coverage.xml
+######
+# git files
+*.rej
+*.patch
+####
+# others
+*.session
