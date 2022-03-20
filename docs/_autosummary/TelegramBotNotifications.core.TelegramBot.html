@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TelegramBotNotifications.core.TelegramBot &mdash; TelegramBotNotifications 0.0.1 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="TelegramBotNotifications.core" href="TelegramBotNotifications.core.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> TelegramBotNotifications
+          </a>
+              <div class="version">
+                0.0.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contents/intro.html">Quickstart.</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Code reference:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="TelegramBotNotifications.html">TelegramBotNotifications</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="TelegramBotNotifications.core.html">TelegramBotNotifications.core</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">TelegramBotNotifications.core.TelegramBot</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">TelegramBotNotifications</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="TelegramBotNotifications.html">TelegramBotNotifications</a> &raquo;</li>
+          <li><a href="TelegramBotNotifications.core.html">TelegramBotNotifications.core</a> &raquo;</li>
+      <li>TelegramBotNotifications.core.TelegramBot</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/_autosummary/TelegramBotNotifications.core.TelegramBot.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="telegrambotnotifications-core-telegrambot">
+<h1>TelegramBotNotifications.core.TelegramBot<a class="headerlink" href="#telegrambotnotifications-core-telegrambot" title="Permalink to this headline"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="TelegramBotNotifications.core.TelegramBot">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">TelegramBotNotifications.core.</span></span><span class="sig-name descname"><span class="pre">TelegramBot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">token</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">users_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_users_check</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TelegramBotNotifications.core.TelegramBot" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Wrapper of official telegram API to send notifications from a BOT
+initiaed manually with &#64;BotFather.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>token</strong> (<em>str</em>) – token of telegram bot</p></li>
+<li><p><strong>channel_mode</strong> (<em>bool</em>) – init class in channel_bot, send to all
+chat_id contained in telegram_users.csv. Defaults to False.</p></li>
+<li><p><strong>users_data_path</strong> (<em>str</em><em>, </em><em>optional</em>) – _descr_. Defaults to None.</p></li>
+<li><p><strong>new_users_check</strong> (<em>bool</em><em>, </em><em>optional</em>) – check for new users and add new ones
+to telegram_users.csv . Defaults to True.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="TelegramBotNotifications.core.TelegramBot.token">
+<span class="sig-name descname"><span class="pre">token</span></span><a class="headerlink" href="#TelegramBotNotifications.core.TelegramBot.token" title="Permalink to this definition"></a></dt>
+<dd><p>token of telegram bot</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="TelegramBotNotifications.core.TelegramBot.channel_mode">
+<span class="sig-name descname"><span class="pre">channel_mode</span></span><a class="headerlink" href="#TelegramBotNotifications.core.TelegramBot.channel_mode" title="Permalink to this definition"></a></dt>
+<dd><p>channel_mode is active</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="TelegramBotNotifications.core.TelegramBot.users_data_path">
+<span class="sig-name descname"><span class="pre">users_data_path</span></span><a class="headerlink" href="#TelegramBotNotifications.core.TelegramBot.users_data_path" title="Permalink to this definition"></a></dt>
+<dd><p>_descr_</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="TelegramBotNotifications.core.TelegramBot.users">
+<span class="sig-name descname"><span class="pre">users</span></span><a class="headerlink" href="#TelegramBotNotifications.core.TelegramBot.users" title="Permalink to this definition"></a></dt>
+<dd><p>dataframe containing usernames
+and chat_id of known users following the bot</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="TelegramBotNotifications.core.TelegramBot.updates">
+<span class="sig-name descname"><span class="pre">updates</span></span><a class="headerlink" href="#TelegramBotNotifications.core.TelegramBot.updates" title="Permalink to this definition"></a></dt>
+<dd><p>dataframe containing all updates
+fetched from bot</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>FileNotFoundError</strong> – _description_</p></li>
+<li><p><strong>ValueError</strong> – _description_</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code>(token[, channel_mode, users_path, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#TelegramBotNotifications.core.TelegramBot.getUpdates" title="TelegramBotNotifications.core.TelegramBot.getUpdates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getUpdates</span></code></a>()</p></td>
+<td><p>get updates from bot</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#TelegramBotNotifications.core.TelegramBot.new_users" title="TelegramBotNotifications.core.TelegramBot.new_users"><code class="xref py py-obj docutils literal notranslate"><span class="pre">new_users</span></code></a>()</p></td>
+<td><p>check if unknown users have interacted with the telegram bot.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#TelegramBotNotifications.core.TelegramBot.send_doc" title="TelegramBotNotifications.core.TelegramBot.send_doc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">send_doc</span></code></a>(document, chat_id[, caption])</p></td>
+<td><p>send document.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#TelegramBotNotifications.core.TelegramBot.send_message" title="TelegramBotNotifications.core.TelegramBot.send_message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">send_message</span></code></a>(message, chat_id)</p></td>
+<td><p>send message to a specific user</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#TelegramBotNotifications.core.TelegramBot.send_message_to_all" title="TelegramBotNotifications.core.TelegramBot.send_message_to_all"><code class="xref py py-obj docutils literal notranslate"><span class="pre">send_message_to_all</span></code></a>(message)</p></td>
+<td><p>send message to all known users</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#TelegramBotNotifications.core.TelegramBot.send_message_to_user" title="TelegramBotNotifications.core.TelegramBot.send_message_to_user"><code class="xref py py-obj docutils literal notranslate"><span class="pre">send_message_to_user</span></code></a>(message, username)</p></td>
+<td><p>send message to specific user.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#TelegramBotNotifications.core.TelegramBot.send_photo" title="TelegramBotNotifications.core.TelegramBot.send_photo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">send_photo</span></code></a>(photo, chat_id[, caption])</p></td>
+<td><p>send photo.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#TelegramBotNotifications.core.TelegramBot.send_photo_to_all" title="TelegramBotNotifications.core.TelegramBot.send_photo_to_all"><code class="xref py py-obj docutils literal notranslate"><span class="pre">send_photo_to_all</span></code></a>(photo)</p></td>
+<td><p>send message to all known users</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="TelegramBotNotifications.core.TelegramBot.getUpdates">
+<span class="sig-name descname"><span class="pre">getUpdates</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#TelegramBotNotifications.core.TelegramBot.getUpdates" title="Permalink to this definition"></a></dt>
+<dd><p>get updates from bot</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="TelegramBotNotifications.core.TelegramBot.new_users">
+<span class="sig-name descname"><span class="pre">new_users</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#TelegramBotNotifications.core.TelegramBot.new_users" title="Permalink to this definition"></a></dt>
+<dd><p>check if unknown users have interacted with the telegram bot.
+If the new users are found, they are automatically added to known users
+csv files.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="TelegramBotNotifications.core.TelegramBot.send_doc">
+<span class="sig-name descname"><span class="pre">send_doc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">document</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chat_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">caption</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TelegramBotNotifications.core.TelegramBot.send_doc" title="Permalink to this definition"></a></dt>
+<dd><p>send document.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="TelegramBotNotifications.core.TelegramBot.send_message">
+<span class="sig-name descname"><span class="pre">send_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chat_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TelegramBotNotifications.core.TelegramBot.send_message" title="Permalink to this definition"></a></dt>
+<dd><p>send message to a specific user</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>message</strong> (<em>str</em>) – string containing message to send</p></li>
+<li><p><strong>chat_id</strong> (<em>int</em>) – chat_id code of chat to send the message to</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="TelegramBotNotifications.core.TelegramBot.send_message_to_all">
+<span class="sig-name descname"><span class="pre">send_message_to_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TelegramBotNotifications.core.TelegramBot.send_message_to_all" title="Permalink to this definition"></a></dt>
+<dd><p>send message to all known users</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>message</strong> (<em>str</em>) – string containing message to send</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="TelegramBotNotifications.core.TelegramBot.send_message_to_user">
+<span class="sig-name descname"><span class="pre">send_message_to_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">username</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TelegramBotNotifications.core.TelegramBot.send_message_to_user" title="Permalink to this definition"></a></dt>
+<dd><p>send message to specific user.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>message</strong> (<em>str</em>) – string containing message to send</p></li>
+<li><p><strong>username</strong> (<em>str</em>) – string username, as saved in <cite>telegram_users.csv</cite></p></li>
+<li><p><strong>file.</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="TelegramBotNotifications.core.TelegramBot.send_photo">
+<span class="sig-name descname"><span class="pre">send_photo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">photo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chat_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">caption</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TelegramBotNotifications.core.TelegramBot.send_photo" title="Permalink to this definition"></a></dt>
+<dd><p>send photo.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>photo</strong> (<em>str</em>) – string path to photo</p></li>
+<li><p><strong>chat_id</strong> (<em>int</em>) – chat_id code of chat to send the message to</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="TelegramBotNotifications.core.TelegramBot.send_photo_to_all">
+<span class="sig-name descname"><span class="pre">send_photo_to_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">photo</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TelegramBotNotifications.core.TelegramBot.send_photo_to_all" title="Permalink to this definition"></a></dt>
+<dd><p>send message to all known users</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>photo</strong> (<em>str</em>) – string path to photo</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="TelegramBotNotifications.core.html" class="btn btn-neutral float-left" title="TelegramBotNotifications.core" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, giocaizzi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

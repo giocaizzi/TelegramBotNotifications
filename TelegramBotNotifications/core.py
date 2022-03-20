@@ -13,46 +13,47 @@ class TelegramBot:
     initiaed manually with @BotFather.
 
     Arguments:
-        configuration (:obj:`surfingcrypto.config.config`) : package
-            configuration object
+        token (str): token of telegram bot
         channel_mode (bool) : init class in channel_bot, send to all
-            chat_id contained in telegram_users.csv
-        new_users_check (bool):  check for new users and add new ones
-            to telegram_users.csv
+            chat_id contained in telegram_users.csv. Defaults to False.
+        users_data_path (str, optional): _descr_. Defaults to None.
+        new_users_check (bool, optional):  check for new users and add new ones
+            to telegram_users.csv . Defaults to True.
 
     Attributes:
         token (str): token of telegram bot
+        channel_mode (bool): channel_mode is active
+        users_data_path (str): _descr_
         users (:obj:`pandas.DataFrame`): dataframe containing usernames
             and chat_id of known users following the bot
         updates (:obj:`pandas.DataFrame`): dataframe containing all updates
             fetched from bot
-        channel_mode (bool): channel_mode is active
+    
+    Raises:
+            FileNotFoundError: _description_
+            ValueError: _description_
     """
 
     def __init__(
-        self, configuration, channel_mode=False, new_users_check=True,
+        self, token:str, channel_mode:bool=False, users_path:str=None,new_users_check:bool=True,
     ):
+
+        self.channel_mode = channel_mode
+        self.token =   token
 
         self.error_log = []
 
-        if hasattr(configuration, "telegram"):
-
-            self.configuration = configuration
-
-            self.channel_mode = channel_mode
-            self.token = self.configuration.telegram["token"]
-
+        try:
             # init official bot
             self.bot = telegram.Bot(token=self.token)
             self.getUpdates()
 
             if self.channel_mode:
                 if os.path.isfile(
-                    self.configuration.config_folder + "/telegram_users.csv"
+                    users_path
                 ):
                     self.users = pd.read_csv(
-                        self.configuration.config_folder
-                        + "/telegram_users.csv"
+                        users_path
                     )
                     self.users["date_joined"] = pd.to_datetime(
                         self.users["date_joined"]
@@ -67,10 +68,8 @@ class TelegramBot:
                         " and chat IDs."
                     )
 
-        else:
-            raise ValueError(
-                "config.json file must contain a telegram bot token."
-            )
+        except:
+            raise ValueError
 
     def getUpdates(self):
         """
@@ -105,7 +104,7 @@ class TelegramBot:
                 self.users = self.users.append(new_users, ignore_index=True)
                 self.users.sort_index(inplace=True)
                 self.users.to_csv(
-                    self.configuration.config_folder + "/telegram_users.csv",
+                    users_path,
                     index=False,
                 )
                 print("Users successfully added!")
