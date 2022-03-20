@@ -1,5 +1,5 @@
 """
-pythob telegram bot wrapper
+telegram bot wrapper
 """
 __version__ = "0.0.1"
 

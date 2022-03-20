@@ -26,3 +26,5 @@ coverage.xml
 ####
 # others
 *.session
+
+telegram_users.csv
