@@ -26,5 +26,9 @@ setup(
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         ],
-    project_urls={"Documentation": "", "Bug Reports": "", "Source": "",},
+    project_urls={
+        "Documentation": "https://giocaizzi.github.io/TelegramBotNotifications/",
+        "Bug Reports": "https://github.com/giocaizzi/TelegramBotNotifications/issues",
+        "Source": "https://github.com/giocaizzi/TelegramBotNotifications",
+        },
 )
