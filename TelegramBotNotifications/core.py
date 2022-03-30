@@ -28,48 +28,48 @@ class TelegramBot:
             and chat_id of known users following the bot
         updates (:obj:`pandas.DataFrame`): dataframe containing all updates
             fetched from bot
-    
+
     Raises:
             FileNotFoundError: _description_
             ValueError: _description_
     """
 
     def __init__(
-        self, token:str, channel_mode:bool=False, users_path:str=None,new_users_check:bool=True,
+        self,
+        token: str,
+        channel_mode: bool = False,
+        users_path: str = None,
+        new_users_check: bool = True,
     ):
 
         self.channel_mode = channel_mode
-        self.token =   token
+        self.token = token
 
         self.error_log = []
 
-        try:
-            # init official bot
-            self.bot = telegram.Bot(token=self.token)
-            self.getUpdates()
+        # init official bot
+        self.bot = telegram.Bot(token=self.token)
+        self.getUpdates()
 
-            if self.channel_mode:
-                if os.path.isfile(
-                    users_path
-                ):
-                    self.users = pd.read_csv(
-                        users_path
-                    )
-                    self.users["date_joined"] = pd.to_datetime(
-                        self.users["date_joined"]
-                    )
-                    if new_users_check:
-                        print("### TELEGRAM BOT")
-                        print("# Checking new users")
-                        self.new_users()
-                else:
-                    raise FileNotFoundError(
-                        "config folder contain a csv file containing usernames"
-                        " and chat IDs."
-                    )
-
-        except:
-            raise ValueError
+        if self.channel_mode and users_path is not None:
+            if os.path.isfile(users_path):
+                self.users = pd.read_csv(users_path)
+                self.users["date_joined"] = pd.to_datetime(
+                    self.users["date_joined"]
+                )
+                if new_users_check:
+                    print("### TELEGRAM BOT")
+                    print("# Checking new users")
+                    self.new_users()
+            else:
+                raise FileNotFoundError(
+                    "config folder contain a csv file containing usernames"
+                    " and chat IDs."
+                )
+        elif self.channel_mode and users_path is None:
+            raise ValueError(
+                "user_path cannot be None when in channel mode."
+            )
 
     def getUpdates(self):
         """
@@ -104,7 +104,7 @@ class TelegramBot:
                 self.users = self.users.append(new_users, ignore_index=True)
                 self.users.sort_index(inplace=True)
                 self.users.to_csv(
-                    users_path,
+                    self.users_data_path,
                     index=False,
                 )
                 print("Users successfully added!")
@@ -116,7 +116,7 @@ class TelegramBot:
     def send_message_to_all(self, message):
         """
         send message to all known users
-            
+
         Arguments:
             message (str): string containing message to send
         """
@@ -151,7 +151,9 @@ class TelegramBot:
             raise ValueError("Module must be in channel mode.")
 
     def send_message(
-        self, message, chat_id,
+        self,
+        message,
+        chat_id,
     ):
         """
         send message to a specific user
@@ -178,7 +180,7 @@ class TelegramBot:
     def send_photo_to_all(self, photo):
         """
         send message to all known users
-        
+
         Arguments:
             photo (str): string path to photo
         """
@@ -191,7 +193,7 @@ class TelegramBot:
     def send_photo(self, photo, chat_id, caption=""):
         """
         send photo.
-        
+
         Arguments:
             photo (str): string path to photo
             chat_id (int): chat_id code of chat to send the message to
