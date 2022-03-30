@@ -92,56 +92,45 @@ async def test_send_message_and_photo(telegram_user):
         if dialog.name == "surfingcrypto_testbot":
             entity = dialog.entity
             break
+    
     found_photo,found_message=False,False
+
     async for message in client.iter_messages(entity):
         if message.media is not None:
             found_photo= True
         if str(message.message) == unique_test_message:
             found_message = True
     
-    assert found_message is True
     assert found_photo is True
+    assert found_message is True
 
-# @pytest.mark.parametrize(
-#     "temp_test_env", [("config_telegram.json",)], indirect=["temp_test_env"]
-# )
-# def test_fail_send_message(temp_test_env):
-#     """fail send message"""
-#     t = TelegramBot(TOKEN)
-#     assert len(t.error_log)==0
-#     t.send_message("FAILED MESSAGE", 0000000)
-#     assert isinstance(t.error_log[0],dict)
 
-# @pytest.mark.parametrize(
-#     "temp_test_env", [("config_telegram.json",)], indirect=["temp_test_env"]
-# )
-# def test_fail_send_photo(temp_test_env):
-#     """fail send photo"""
-#     t = TelegramBot(TOKEN)
-#     assert len(t.error_log)==0
-#     t.send_photo(str("config"/"logo.jpg"), 0000000)
-#     assert isinstance(t.error_log[0],dict)
+def test_fail_send_message():
+    """fail send message"""
+    t = TelegramBot(TOKEN)
+    assert len(t.error_log)==0
+    t.send_message("FAILED MESSAGE", 0000000)
+    assert isinstance(t.error_log[0],dict)
 
-# @patch.object(telegram.Bot,"sendMessage") 
-# @pytest.mark.parametrize(
-#     "temp_test_env", [("config_telegram.json","telegram_users.csv")], indirect=["temp_test_env"]
-# )
-# def test_message_to_all(mock_getter,temp_test_env):
-#     """send message to all stored contacts, without updates"""
-#     t = TelegramBot(TOKEN,channel_mode=True,new_users_check=False)
-#     t.send_message_to_all("fail")
-#     assert mock_getter.call_count == 3
 
-# @pytest.mark.skip
-# @patch.object(telegram.Bot,"send_photo") 
-# @pytest.mark.parametrize(
-#     "temp_test_env", [("config_telegram.json","telegram_users.csv","logo.jpg")], indirect=["temp_test_env"]
-# )
-# def test_photo_to_all(mock_getter,temp_test_env):
-#     """send photo to all stored contacts, without updates"""
-#     root = temp_test_env
-#     c = Config(str(root / "config"))
-#     t = TelegramBot(c,channel_mode=True,new_users_check=False)
-#     t.send_photo_to_all(str(root/"config"/"logo.jpg"))
-#     assert mock_getter.call_count == 3
+def test_fail_send_photo():
+    """fail send photo"""
+    t = TelegramBot(TOKEN)
+    assert len(t.error_log)==0
+    t.send_photo("docsrc/source/images/logo.png", 0000000)
+    assert isinstance(t.error_log[0],dict)
+
+@patch.object(telegram.Bot,"sendMessage") 
+def test_message_to_all(mock_getter):
+    """send message to all stored contacts, without updates"""
+    t = TelegramBot(TOKEN,channel_mode=True,users_path="tests/telegram_users.csv",new_users_check=False)
+    t.send_message_to_all("fail")
+    assert mock_getter.call_count == 3
+
+@patch.object(telegram.Bot,"send_photo") 
+def test_photo_to_all(mock_getter):
+    """send photo to all stored contacts, without updates"""
+    t = TelegramBot(TOKEN,channel_mode=True,users_path="tests/telegram_users.csv",new_users_check=False)
+    t.send_photo_to_all("docsrc/source/images/logo.png")
+    assert mock_getter.call_count == 3
 
