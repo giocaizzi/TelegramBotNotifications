@@ -63,8 +63,8 @@ class TelegramBot:
                     self.new_users()
             else:
                 raise FileNotFoundError(
-                    "config folder contain a csv file containing usernames"
-                    " and chat IDs."
+                    "csv file containing usernames"
+                    "and chat IDs not found."
                 )
         elif self.channel_mode and users_path is None:
             raise ValueError(

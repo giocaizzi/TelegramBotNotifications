@@ -123,14 +123,14 @@ def test_fail_send_photo():
 @patch.object(telegram.Bot,"sendMessage") 
 def test_message_to_all(mock_getter):
     """send message to all stored contacts, without updates"""
-    t = TelegramBot(TOKEN,channel_mode=True,users_path="tests/telegram_users.csv",new_users_check=False)
+    t = TelegramBot(TOKEN,channel_mode=True,users_path="tests/test_telegram_users.csv",new_users_check=False)
     t.send_message_to_all("fail")
     assert mock_getter.call_count == 3
 
 @patch.object(telegram.Bot,"send_photo") 
 def test_photo_to_all(mock_getter):
     """send photo to all stored contacts, without updates"""
-    t = TelegramBot(TOKEN,channel_mode=True,users_path="tests/telegram_users.csv",new_users_check=False)
+    t = TelegramBot(TOKEN,channel_mode=True,users_path="tests/test_telegram_users.csv",new_users_check=False)
     t.send_photo_to_all("docsrc/source/images/logo.png")
     assert mock_getter.call_count == 3
 
