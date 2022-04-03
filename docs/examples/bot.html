@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Telegram Bot &mdash; TelegramBotNotifications 0.0.1 documentation</title>
+  <title>Telegram Bot &mdash; TelegramBotNotifications 0.0.2 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -33,7 +33,7 @@
             <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.0.1
+                0.0.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -353,7 +353,7 @@ div.rendered_html tbody tr:hover {
 <div class="section" id="Telegram-Bot">
 <h1>Telegram Bot<a class="headerlink" href="#Telegram-Bot" title="Permalink to this headline"></a></h1>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
@@ -364,10 +364,11 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">=</span><span class="n">TelegramBot</span><span class="p">(</span>
+    <span class="c1">#this is the API token, string</span>
     <span class="n">decouple</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="s2">&quot;TELEGRAM_TOKEN&quot;</span><span class="p">),</span>
     <span class="n">channel_mode</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">users_path</span><span class="o">=</span><span class="s2">&quot;../../../telegram_users.csv&quot;</span><span class="p">)</span>
@@ -385,7 +386,7 @@ No new users.
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">updates</span>
@@ -393,7 +394,7 @@ No new users.
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
@@ -425,16 +426,44 @@ No new users.
     <tr>
       <th>0</th>
       <td>None</td>
-      <td>2022-03-20 22:19:02+00:00</td>
+      <td>2022-03-30 17:19:52+00:00</td>
       <td>5055308345</td>
-      <td>ciao</td>
+      <td>F72LEZ5UEC</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>None</td>
+      <td>2022-03-30 17:19:53+00:00</td>
+      <td>5055308345</td>
+      <td>C64KMDK6HB</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>None</td>
+      <td>2022-03-30 17:19:55+00:00</td>
+      <td>5055308345</td>
+      <td>RMOAQOA2GE</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>None</td>
+      <td>2022-03-30 17:22:36+00:00</td>
+      <td>5055308345</td>
+      <td>XA8JEZUAJK</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>None</td>
+      <td>2022-03-30 17:22:39+00:00</td>
+      <td>5055308345</td>
+      <td>KR4PK9NYEB</td>
     </tr>
   </tbody>
 </table>
 </div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">users</span>
@@ -442,7 +471,7 @@ No new users.
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
@@ -481,7 +510,7 @@ No new users.
 </div></div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">send_message_to_user</span><span class="p">(</span><span class="s2">&quot;ciao&quot;</span><span class="p">,</span><span class="s2">&quot;admin&quot;</span><span class="p">)</span>
@@ -489,7 +518,7 @@ No new users.
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">send_message_to_user</span><span class="p">(</span><span class="s2">&quot;ciao&quot;</span><span class="p">,</span><span class="s2">&quot;addmin&quot;</span><span class="p">)</span>
@@ -505,7 +534,7 @@ UserNotFoundError
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">send_photo</span><span class="p">(</span><span class="s2">&quot;../temp/ADA_20220201-214758.jpeg&quot;</span><span class="p">,</span><span class="mi">888418315</span><span class="p">)</span>
@@ -521,7 +550,7 @@ SendPhotoError
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">error_log</span>
@@ -529,7 +558,7 @@ SendPhotoError
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
 <div class="output_area docutils container">

@@ -9,7 +9,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 2,
+   "execution_count": 1,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -21,7 +21,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 8,
+   "execution_count": 2,
    "metadata": {},
    "outputs": [
     {
@@ -36,6 +36,7 @@
    ],
    "source": [
     "t=TelegramBot(\n",
+    "    #this is the API token, string\n",
     "    decouple.config(\"TELEGRAM_TOKEN\"),\n",
     "    channel_mode=True,\n",
     "    users_path=\"../../../telegram_users.csv\")"
@@ -43,7 +44,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 9,
+   "execution_count": 3,
    "metadata": {},
    "outputs": [
     {
@@ -77,20 +78,52 @@
        "    <tr>\n",
        "      <th>0</th>\n",
        "      <td>None</td>\n",
-       "      <td>2022-03-20 22:19:02+00:00</td>\n",
+       "      <td>2022-03-30 17:19:52+00:00</td>\n",
        "      <td>5055308345</td>\n",
-       "      <td>ciao</td>\n",
+       "      <td>F72LEZ5UEC</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>None</td>\n",
+       "      <td>2022-03-30 17:19:53+00:00</td>\n",
+       "      <td>5055308345</td>\n",
+       "      <td>C64KMDK6HB</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>None</td>\n",
+       "      <td>2022-03-30 17:19:55+00:00</td>\n",
+       "      <td>5055308345</td>\n",
+       "      <td>RMOAQOA2GE</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>None</td>\n",
+       "      <td>2022-03-30 17:22:36+00:00</td>\n",
+       "      <td>5055308345</td>\n",
+       "      <td>XA8JEZUAJK</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>None</td>\n",
+       "      <td>2022-03-30 17:22:39+00:00</td>\n",
+       "      <td>5055308345</td>\n",
+       "      <td>KR4PK9NYEB</td>\n",
        "    </tr>\n",
        "  </tbody>\n",
        "</table>\n",
        "</div>"
       ],
       "text/plain": [
-       "  username                      date     chat_id message\n",
-       "0     None 2022-03-20 22:19:02+00:00  5055308345    ciao"
+       "  username                      date     chat_id     message\n",
+       "0     None 2022-03-30 17:19:52+00:00  5055308345  F72LEZ5UEC\n",
+       "1     None 2022-03-30 17:19:53+00:00  5055308345  C64KMDK6HB\n",
+       "2     None 2022-03-30 17:19:55+00:00  5055308345  RMOAQOA2GE\n",
+       "3     None 2022-03-30 17:22:36+00:00  5055308345  XA8JEZUAJK\n",
+       "4     None 2022-03-30 17:22:39+00:00  5055308345  KR4PK9NYEB"
       ]
      },
-     "execution_count": 9,
+     "execution_count": 3,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -101,7 +134,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 10,
+   "execution_count": 4,
    "metadata": {},
    "outputs": [
     {
@@ -146,7 +179,7 @@
        "0  5055308345    admin 2022-02-06 21:55:54+00:00"
       ]
      },
-     "execution_count": 10,
+     "execution_count": 4,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -157,7 +190,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 11,
+   "execution_count": 5,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -166,7 +199,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 12,
+   "execution_count": 6,
    "metadata": {},
    "outputs": [
     {
@@ -183,7 +216,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 13,
+   "execution_count": 7,
    "metadata": {},
    "outputs": [
     {
@@ -200,7 +233,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 7,
+   "execution_count": 8,
    "metadata": {},
    "outputs": [
     {
@@ -211,7 +244,7 @@
        "  'e': FileNotFoundError(2, 'No such file or directory')}]"
       ]
      },
-     "execution_count": 7,
+     "execution_count": 8,
      "metadata": {},
      "output_type": "execute_result"
     }
